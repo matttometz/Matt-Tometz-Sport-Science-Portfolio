@@ -1,15 +1,10 @@
-<p align="center">
-# Matt Tometz, MS, CPSS, CSCS
-</p>
-<p align="center">
-## Sport Science Portfolio
-</p>
-
+<h1 align="center">Matt Tometz, MS, CPSS, CSCS</h1>
+<h1 align="center">Sport Science Portfolio</h2>
 ---
 
->"Helping athletes and coaches take control of their sports story," that's why I'm here. As an ex-college baseball player and current Performance Coach/Sport Scientist, I'm extremely proud of the stories I've created. Now, how exciting of an opportunity is it to help everyone I interact with make their story worth telling.
->
->Through combining the subjectivity of coaching, the objectivity of sport science, and the framework of the scientific method, 
+"Helping athletes and coaches take control of their sports story," that's why I'm here. As an ex-college baseball player and current Performance Coach/Sport Scientist, I'm extremely proud of the stories I've created. Now, how exciting of an opportunity is it to help everyone I interact with make their story worth telling.
+
+Through combining the subjectivity of coaching, the objectivity of sport science, and the framework of the scientific method, 
 
 ---
 
