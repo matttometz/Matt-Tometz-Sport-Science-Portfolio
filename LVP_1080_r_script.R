@@ -1,14 +1,14 @@
-#Install tidyverse and load packages
+# Install tidyverse and load packages
 install.packages("tidyverse")
 library(dplyr)
 library(tidyr)
 library(lubridate)
 
-#Load data and re-format as necessary
+# Load data and re-format as necessary
 data <- read.csv("LVP_1080.csv")
 data$date <- as.Date(data$date)
 
-#Reshape data from wide to long
+# Reshape data from wide to long
 data_long <- pivot_longer(data,
                           cols = c(load_1, load_2, load_3, load_4,
                                    velo_1, velo_2, velo_3, velo_4,
@@ -35,7 +35,7 @@ calc_velocity_decrements <- function(df) {
   ))
 }
 
-#Run function for velocity decrements
+# Run function for velocity decrements
 results <- data_long %>%
   group_by(Name, gender, age) %>%
   do(calc_velocity_decrements(.)) %>%
@@ -49,7 +49,7 @@ results <- results %>%
 filtered_data <- data_long %>%
   filter(gender %in% c(1, 2) & age %in% c(1, 2, 3))
 
-#Filter most recent profiles for each athlete
+# Filter most recent profiles for each athlete
 most_recent_profiles <- results %>%
   group_by(Name, gender, age) %>%
   slice_max(order_by = date, n = 1, with_ties = FALSE) %>%
@@ -67,7 +67,7 @@ condensed_profiles <- most_recent_profiles %>%
   ) %>%
   select(Name, `Date`, `Max Velocity`, `10% Vdec`, `25% Vdec`, `50% Vdec`)
 
-#Sort groups based on age and gender
+# Sort groups based on age and gender
 most_recent_profiles <- most_recent_profiles %>%
   mutate(Group = case_when(
     age == 1 & gender == 1 ~ "High School Boys",
@@ -78,7 +78,7 @@ most_recent_profiles <- most_recent_profiles %>%
     age == 3 & gender == 2 ~ "Pro Girls"
   ))
 
-#Calculate averages and standard deviations for each group
+# Calculate averages and standard deviations for each group
 averages <- most_recent_profiles %>%
   group_by(Group) %>%
   summarise(
@@ -96,7 +96,7 @@ averages <- most_recent_profiles %>%
   ) %>%
   filter(!is.na(Group))
 
-#Renaming columns for easier readability
+# Renaming columns for easier readability
 averages <- averages %>%
   rename(
     "Athletes" = number_of_profiles,
@@ -112,5 +112,6 @@ averages <- averages %>%
     "R2 SD" = sd_r_squared
   )
 
-#Export data
+# Export data
 write.csv(averages, "LVP_group_averages.csv", row.names = FALSE)
+write.csv(condensed_profiles, "LVP_condensed_profiles.csv", row.names = FALSE)
