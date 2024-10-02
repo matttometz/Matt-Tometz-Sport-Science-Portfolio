@@ -40,5 +40,25 @@ Through combining the subjectivity of coaching, the objectivity of sport science
 
 ---
 
-## Resume
-[Link to Resume PDF](MattTometzResume.pdf)
+##Relevant Skills and Exposures
+###Performance Softwares/Technologies
+- 1080 Sprint
+- VALD NordBord
+- Hawkins Dynamics Force Plates
+- Gymwaware/Enode VBT
+- VALD and Dashr Timing lasers
+- R
+- Microsoft Excel/Google Sheets
+- ChatGPT
+
+###Skills
+- Intermediate Spanish communication 
+
+## Resume and Certifications
+- [Link to Resume PDF](MattTometzResume.pdf)
+- [Certified Performance and Sport Scientist]()
+- [Certified Strength and Conditioning Specialist]()
+- [Google Data Analytics Professional Certificate]()
+
+## Contact Information
+- [matthew.tometz@gmail.com](matthew.tometz@gmail.com)
