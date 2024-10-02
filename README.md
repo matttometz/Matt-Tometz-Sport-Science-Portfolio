@@ -1,19 +1,9 @@
 <h1 align="center">Matt Tometz, MS, CPSS, CSCS</h1>
 <h2 align="center">Sport Science Portfolio</h2>
 
-"Helping athletes and coaches take control of their sports story," that's why I'm here. As an ex-college baseball player and current Performance Coach/Sport Scientist, I'm extremely proud of the stories I've created. Now, how exciting of an opportunity is it to help everyone I interact with make their story worth telling.
+"Helping athletes and coaches take control of their sports story" – that's why I do what I do. As an ex-college baseball walk-on who ended up playing in the DII College World Series just 9 months later, I know how powerful a story can be. I may not remember all my stats, but the moments, the highs, and the lessons still bring a smile to my face when I tell the stories. Now, I’m driven to help others build their own unforgettable stories through performance coaching and sport science.
 
-The combination of the subjectivity of collaborating with other, the objectivity of sport science, and the framework of the scientific method, data science is the ultimate challenge as professional. 
-
----
-
-# Research
-
-[Master's Thesis Published in JSCR](Matt_Tometz_Thesis_JSCR.pdf)
-
-- Title: Validation of Internal and External Load Metrics in NCAA D1 Women's Beach Volleyball
-
-- Objective: Be the first study in women's college beach volleyball, and first validation study in all of beach volleyball, to validate sRPE Load and Distance covered to heart rate load (TRIMP)
+Balancing the extremes of publishing academic research with the hands-on world of coaching, I've learned to blend both. The objectivity of data and the subjectivity of collaboration make sport science an exciting challenge, and I’m passionate about applying these insights in real-world settings. My goal is to make sport science practical and my coaching more reliable, so athletes and coaches can achieve the best possible outcomes.
 
 ---
 
@@ -37,6 +27,16 @@ The combination of the subjectivity of collaborating with other, the objectivity
 - [Link to Excel output](Force_Plate_Results_Table.csv)
 - [Plot for Jump Height](Jump_Height_Plot.png)
 - [Plot for mRSI](mRSI_Plot.png)
+
+---
+
+# Research
+
+[Master's Thesis Published in JSCR](Matt_Tometz_Thesis_JSCR.pdf)
+
+- Title: Validation of Internal and External Load Metrics in NCAA D1 Women's Beach Volleyball
+
+- Objective: Be the first study in women's college beach volleyball, and first validation study in all of beach volleyball, to validate sRPE Load and Distance covered to heart rate load (TRIMP)
 
 ---
 
