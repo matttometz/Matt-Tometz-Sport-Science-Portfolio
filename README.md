@@ -21,13 +21,15 @@ Through combining the subjectivity of coaching, the objectivity of sport science
 ## Data Analytics Projects
 ### 1080 Load-Velocity Profiling 👟
 - **Objective:** take profiling data from the 1080 Sprint
-- **Practical Applications:** help coaches more quickly and effective select loads for resisted sprint training for large groups and/or when the time to profile isn't available. As well, this will serve as becnhmarks to evaluate individuals athletes compared to group averages.
+- **Practical Applications:** help coaches more quickly and effective select loads for resisted sprint training for large groups and/or when the time to profile isn't available. As well, this will serve as benchmarks to evaluate individuals athletes compared to group averages.
 - [Link to R Script](LVP_1080_r_script.R)
-- [Link to Excel output](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/LVP_group_averages.csv)
+- [Link to Excel output](LVP_grou_averages.csv)
 
-### 1080 Load-Power Profiling 💪
-- **Objective:**
-- **Practical Applications:**
+### Velocity-Based Training Squat Load-Power Profiling 💪
+- **Objective:** take training data from a variety of squats including load, velocity, and power to calculate both the percent of estiamted 1-rep max and velocity for max power
+- **Practical Applications:** help coaches give guidance for velocity training zones for Power Development blocks when the time to profile or prior training data isn't available. As well, this will serve as benchmarks to evaluate individuals athletes compared to group averages.
+- [Link to R Script](Squat_Power_R_Script.R)
+- [Link to Excel output](Squat_Power_Results.csv)
     
 ### Force Plate Visualizations 🐰
 - **Objective:**
