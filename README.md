@@ -19,13 +19,13 @@ Balancing the extremes of publishing academic research with the hands-on world o
 - **Objective:** take training data from a variety of squats including load, velocity, and power to calculate both the percent of estiamted 1-rep max and velocity for max power
 - **Practical Applications:** help coaches give guidance for velocity training zones for Power Development blocks when the time to profile or prior training data isn't available. As well, this will serve as benchmarks to evaluate individuals athletes compared to group averages.
 - [Link to R Script](Squat_Power_R_Script.R)
-- [Link to Excel output](Squat_Power_Results.csv)
+- [Link to Results](Squat_Power_Results.csv)
     
 ### Force Plate Visualizations 🐰
 - **Objective:** visualize 2 different force plate metrics over time to give a quick snapshot of the team's performance by position group
 - **Practical Applications:** help coaches retroactively active high and low periods of training, reflect on unavoidable/confounding variables like in-season travel, etc. to proactively prepare for the highs and lows throughout an academic calendar in the future
 - [Link to R Script](Force_Plate_Viz_R_Script.R)
-- [Link to Excel output](Force_Plate_Results_Table.csv)
+- [Link to Results](Force_Plate_Results_Table.csv)
 - [Plot for Jump Height](Jump_Height_Plot.png)
 - [Plot for mRSI](mRSI_Plot.png)
 
@@ -63,7 +63,7 @@ Balancing the extremes of publishing academic research with the hands-on world o
 
 ## Resume and Certifications
 - [Link to Resume](MattTometzResume.pdf)
-- [Certified Performance and Sport Scientist (CPSS)](Matt_Toemtz_NSCA_ID.pdf)
+- [Certified Performance and Sport Scientist (CPSS)](Matt_Tometz_NSCA_ID.pdf)
 - [Certified Strength and Conditioning Specialist (CSCS)](Matt_Toemtz_NSCA_ID.pdf)
 - [Google Data Analytics Professional Certificate](Matt_Tometz_Google_Data_Analytics_Certificate.pdf)
 
