@@ -22,7 +22,7 @@ Through combining the subjectivity of coaching, the objectivity of sport science
 ### 1080 Load-Velocity Profiling 👟
 - **Objective:** take profiling data from the 1080 Sprint
 - **Practical Applications:** help coaches more quickly and effective select loads for resisted sprint training for large groups and/or when the time to profile isn't available. As well, this will serve as becnhmarks to evaluate individuals athletes compared to group averages.
-- [Link to R Script](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/LVP_1080_r_script.R)
+- [Link to R Script](LVP_1080_r_script.R)
 - [Link to Excel output](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/LVP_group_averages.csv)
 
 ### 1080 Load-Power Profiling 💪
