@@ -1,0 +1,17 @@
+month,position,avg_jump_height,sd_jump_height,jump_count,avg_mrsi,sd_mrsi,mrsi_count
+October,Hitter,0.4,0.05,101,0.57,0.1,101
+November,Hitter,0.43,0.05,70,0.59,0.09,70
+December,Hitter,0.41,0.08,2,0.56,0.07,2
+January,Hitter,0.44,0.05,102,0.61,0.11,102
+February,Hitter,0.45,0.05,126,0.59,0.1,126
+March,Hitter,0.44,0.05,66,0.61,0.11,66
+April,Hitter,0.44,0.05,111,0.59,0.09,111
+May,Hitter,0.44,0.06,54,0.59,0.09,54
+October,Pitcher,0.4,0.05,103,0.55,0.08,103
+November,Pitcher,0.41,0.04,65,0.55,0.06,65
+December,Pitcher,0.41,0.02,2,0.54,0.07,2
+January,Pitcher,0.42,0.04,73,0.57,0.06,73
+February,Pitcher,0.42,0.04,102,0.56,0.06,102
+March,Pitcher,0.43,0.04,44,0.57,0.06,44
+April,Pitcher,0.43,0.04,99,0.57,0.07,99
+May,Pitcher,0.43,0.04,38,0.58,0.06,38
