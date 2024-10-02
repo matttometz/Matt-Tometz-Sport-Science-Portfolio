@@ -9,7 +9,7 @@ Through combining the subjectivity of coaching, the objectivity of sport science
 
 # Research
 
-[Master's Thesis Published in JSCR](https://journals.lww.com/nsca-jscr/fulltext/2022/08000/validation_of_internal_and_external_load_metrics.23.aspx)
+[Master's Thesis Published in JSCR](Matt_Tometz_Thesis_JSCR.pdf)
 
 - Title: Validation of Internal and External Load Metrics in NCAA D1 Women's Beach Volleyball
 
@@ -40,19 +40,25 @@ Through combining the subjectivity of coaching, the objectivity of sport science
 
 ---
 
-## Relevant Skills and Exposures
+## Relevant Skills and  Exposures
 ### Performance Softwares/Technologies
 - 1080 Sprint
 - VALD NordBord
 - Hawkins Dynamics Force Plates
 - Gymwaware/Enode VBT
-- VALD and Dashr Timing lasers
+- VALD, Swift, and Dashr Timing Lasers
+- Swift EZE Jump Mat
+- Polar Team Pro heart rate monitors
+- FYTT and TeamBuildr AMS's
+- Daily Wellness Questionnaires
+- Kinovea
 - R
 - Microsoft Excel/Google Sheets
-- ChatGPT
 
 ### Skills
-- Intermediate Spanish communication 
+- Sprint video analysis
+- Intermediate Spanish communication
+- Foot evaluating and profiling under Dr. Bruce Williams
 
 ## Resume and Certifications
 - [Link to Resume PDF](MattTometzResume.pdf)
@@ -61,4 +67,4 @@ Through combining the subjectivity of coaching, the objectivity of sport science
 - [Google Data Analytics Professional Certificate](Matt_Tometz_Google_Data_Analytics_Certificate.pdf)
 
 ## Contact Information
-- [matthew.tometz@gmail.com](matthew.tometz@gmail.com)
+- Email: [matthew.tometz@gmail.com](matthew.tometz@gmail.com)
