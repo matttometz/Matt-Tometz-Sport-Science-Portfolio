@@ -35,8 +35,8 @@ Through combining the subjectivity of coaching, the objectivity of sport science
 - **Practical Applications:** help coaches retroactively active high and low periods of training, reflect on unavoidable/confounding variables like in-season travel, etc. to proactively prepare for the highs and lows throughout an academic calendar in the future
 - [Link to R Script](Force_Plate_Viz_R_Script.R)
 - [Link to Excel output](Force_Plate_Results_Table.csv)
-- ![Plot for Jump Height](Jump_Height_Plot.png)
-- ![Plot for mRSI](mRSI_Plot.png)
+- [Plot for Jump Height](Jump_Height_Plot.png)
+- [Plot for mRSI](mRSI_Plot.png)
 
 ---
 
