@@ -95,3 +95,6 @@ results_table <- cleaned_combined_data %>%
     avg_max_power_velo = round(mean(max_power_velocity), 2),
     max_power_velo_sd = round(sd(max_power_velocity), 2)
   )
+
+# Export the data
+write.csv(results_table, "Squat_power_Results.csv", row.names = FALSE)
