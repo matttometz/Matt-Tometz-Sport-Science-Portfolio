@@ -31,10 +31,12 @@ Through combining the subjectivity of coaching, the objectivity of sport science
 - [Link to Excel output](Squat_Power_Results.csv)
     
 ### Force Plate Visualizations 🐰
-- **Objective:**
-- **Practical Applications:**
-- [Link to R Script]()
-- [Link to Excel output]()
+- **Objective:** visualize 2 different force plate metrics over time to give a quick snapshot of the team's performance by position group
+- **Practical Applications:** help coaches retroactively active high and low periods of training, reflect on unavoidable/confounding variables like in-season travel, etc. to proactively prepare for the highs and lows throughout an academic calendar in the future
+- [Link to R Script](Force_Plate_Viz_R_Script.R)
+- [Link to Excel output](Force_Plate_Results_Table.csv)
+- ![Plot for Jump Height](Jump_Height_Plot.png)
+- ![Plot for mRSI](mRSI_Plot.png)
 
 ---
 
