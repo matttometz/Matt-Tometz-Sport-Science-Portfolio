@@ -40,8 +40,8 @@ Through combining the subjectivity of coaching, the objectivity of sport science
 
 ---
 
-##Relevant Skills and Exposures
-###Performance Softwares/Technologies
+## Relevant Skills and Exposures
+### Performance Softwares/Technologies
 - 1080 Sprint
 - VALD NordBord
 - Hawkins Dynamics Force Plates
@@ -51,14 +51,14 @@ Through combining the subjectivity of coaching, the objectivity of sport science
 - Microsoft Excel/Google Sheets
 - ChatGPT
 
-###Skills
+### Skills
 - Intermediate Spanish communication 
 
 ## Resume and Certifications
 - [Link to Resume PDF](MattTometzResume.pdf)
-- [Certified Performance and Sport Scientist]()
-- [Certified Strength and Conditioning Specialist]()
-- [Google Data Analytics Professional Certificate]()
+- [Certified Performance and Sport Scientist](Matt_Toemtz_NSCA_ID.pdf)
+- [Certified Strength and Conditioning Specialist](Matt_Toemtz_NSCA_ID.pdf)
+- [Google Data Analytics Professional Certificate](Matt_Tometz_Google_Data_Analytics_Certificate.pdf)
 
 ## Contact Information
 - [matthew.tometz@gmail.com](matthew.tometz@gmail.com)
