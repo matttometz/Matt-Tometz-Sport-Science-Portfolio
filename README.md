@@ -3,7 +3,7 @@
 
 "Helping athletes and coaches take control of their sports story," that's why I'm here. As an ex-college baseball player and current Performance Coach/Sport Scientist, I'm extremely proud of the stories I've created. Now, how exciting of an opportunity is it to help everyone I interact with make their story worth telling.
 
-Through combining the subjectivity of coaching, the objectivity of sport science, and the framework of the scientific method, 
+The combination of the subjectivity of collaborating with other, the objectivity of sport science, and the framework of the scientific method, data science is the ultimate challenge as professional. 
 
 ---
 
