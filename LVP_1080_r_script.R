@@ -55,6 +55,18 @@ most_recent_profiles <- results %>%
   slice_max(order_by = date, n = 1, with_ties = FALSE) %>%
   ungroup()
 
+# Condense most recent profiles to a printable version
+condensed_profiles <- most_recent_profiles %>%
+  select(Name, date, max_velocity, load_90, load_75, load_50) %>%
+  mutate(
+    `Date` = format(date, "%m/%d/%y"),
+    `Max Velocity` = round(max_velocity, 1),
+    `10% Vdec` = round(load_90, 1),
+    `25% Vdec` = round(load_75, 1),
+    `50% Vdec` = round(load_50, 1)
+  ) %>%
+  select(Name, `Date`, `Max Velocity`, `10% Vdec`, `25% Vdec`, `50% Vdec`)
+
 #Sort groups based on age and gender
 most_recent_profiles <- most_recent_profiles %>%
   mutate(Group = case_when(
