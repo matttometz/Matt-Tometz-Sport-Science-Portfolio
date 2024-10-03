@@ -33,9 +33,9 @@ Balancing the extremes of publishing academic research with the hands-on world o
 
 # Research
 ## Validation of Internal and External Load Metrics in NCAA D1 Women's Beach Volleyball
-- [Master's Thesis Published in JSCR](Matt_Tometz_Thesis_JSCR.pdf)
 - **Objective:** Be the first study in women's college beach volleyball, and first load monitoring validation study in all of beach volleyball, to validate sRPE Load and Distance Covered to Heart Rate Load (TRIMP)
 - **Implications:** Provide beach volleyball athletes with an affordable and scalable way to monitor load (sRPE Load) based on it's high correlations with both objective internal (TRIMP) and external (Distance Covered) loads.
+- [Master's Thesis Published in JSCR](Matt_Tometz_Thesis_JSCR.pdf)
 
 ---
 
