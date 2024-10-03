@@ -44,7 +44,7 @@ Balancing the extremes of publishing academic research with the hands-on world o
 - 1080 Sprint
 - VALD NordBord
 - Hawkins Dynamics Force Plates
-- Gymwaware/Enode VBT
+- Gymwaware and Enode VBT
 - VALD, Swift, and Dashr Timing Lasers
 - Swift EZE Jump Mat
 - Polar Team Pro heart rate monitors
