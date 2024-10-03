@@ -44,7 +44,7 @@ Balancing the extremes of publishing academic research with the hands-on world o
 ---
 
 ## Relevant Skills and Exposures
-### Performance Softwares/Technologies
+### Performance Technologies
 - 1080 Sprint
 - VALD NordBord
 - Hawkins Dynamics Force Plates
@@ -52,12 +52,14 @@ Balancing the extremes of publishing academic research with the hands-on world o
 - VALD, Swift, and Dashr Timing Lasers
 - Swift EZE Jump Mat
 - Polar Team Pro heart rate monitors
-- FYTT and TeamBuildr AMS's
 - Daily Wellness Questionnaires
 - Pocket Radar
-- Kinovea
-- R
-- Microsoft Excel/Google Sheets
+
+### Coding/Software
+-R
+-Microsfot Excel/Google Sheets
+-FYTT and TeamBuildr
+-Kinovea
 
 ### Skills
 - Sprint video analysis
