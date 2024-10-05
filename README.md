@@ -49,11 +49,12 @@ Balancing the extremes of publishing academic research with the hands-on world o
 - Swift EZE Jump Mat
 - Polar Team Pro heart rate monitors
 - Daily Wellness Questionnaires
+- sRPE Questionnaires
 - Pocket Radar
 
 ### Coding/Software
 - R
-- Microsfot Excel/Google Sheets
+- Microsoft Excel/Google Sheets
 - FYTT and TeamBuildr
 - Kinovea
 
