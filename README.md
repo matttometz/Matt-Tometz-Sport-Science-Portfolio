@@ -29,6 +29,13 @@ Balancing the extremes of publishing academic research with the hands-on world o
 - [Plot for Jump Height](Jump_Height_Plot.png)
 - [Plot for mRSI](mRSI_Plot.png)
 
+### Sport Science Project Write-Ups/Articles
+- **Objective:** give thorough details in a research article-type format following introduction, methods, data, results, and discussion to share findings and insights from real-world performance case studies
+- [Load-Velocity Profiling on the 1080 Sprint: Everything You Need to Know](https://simplifaster.com/articles/load-velocity-profiling-1800-sprint/)
+- [Where is Max Power in Sprinting?](https://simplifaster.com/articles/where-is-max-power-in-sprinting/)
+- [Are Athletes Actually Faster When They Race?](https://simplifaster.com/articles/are-athletes-faster-when-racing/)
+- [Daily Vertical Jumps: What Percentage of an Athlete’s Best?](https://simplifaster.com/articles/daily-vertical-jumps-percentage-readiness/)
+
 ---
 
 # Research
