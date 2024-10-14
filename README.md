@@ -61,6 +61,7 @@ Balancing the extremes of publishing academic research with the hands-on world o
 
 ### Coding/Software
 - R
+- Python
 - Microsoft Excel/Google Sheets
 - FYTT and TeamBuildr
 - Kinovea
@@ -75,6 +76,7 @@ Balancing the extremes of publishing academic research with the hands-on world o
 - [Certified Performance and Sport Scientist (CPSS)](Matt_Tometz_NSCA_ID.pdf)
 - [Certified Strength and Conditioning Specialist (CSCS)](Matt_Tometz_NSCA_ID.pdf)
 - [Google Data Analytics Professional Certificate](Matt_Tometz_Google_Data_Analytics_Certificate.pdf)
+- [Google Crash Course on Python Certificate](Crash_Course_on_Python_Cert.pdf)
 
 ## Personal Passion Projects
 - [YouTube Channel](https://www.youtube.com/matttometz)
