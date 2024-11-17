@@ -11,7 +11,7 @@ Balancing the extremes of publishing academic research with the hands-on world o
 ### 1080 Sprint Load-Velocity Profiling 👟
 - **Objective:** take load-velocity profiling data from the 1080 Sprint to individual profiles and generate group averages to influence loading prescriptions for resisted sprints.
 - **Practical Applications:** help coaches more quickly and effective select loads for resisted sprint training for both individual athletes to better tailor their loading prescriptions, as well as for large groups when the time to profile each athlete might not be available.
-- [Link to R Script](LVP_1080_r_script.R)
+- [Link to R Script](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/LVP_1080_r_script.R)
 - [Link to Group Averages](LVP_group_averages.csv)
 - [Link to Individual Profiles](LVP_condensed_profiles.csv)
 
