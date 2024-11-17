@@ -18,16 +18,16 @@ Balancing the extremes of publishing academic research with the hands-on world o
 ### Velocity-Based Training Squat Load-Power Profiling 💪
 - **Objective:** take squat data from training from a variety of squats including the variables of load, velocity, and power to calculate both the percent of estiamted 1-rep max and velocity for max power.
 - **Practical Applications:** help coaches prescribe training guidelines for Power Development blocks, regardless of if velocity-based training technology is (max power velocity) or is not (max power percent of estimated 1-rep max) available.
-- [Link to R Script](Squat_Power_R_Script.R)
-- [Link to Results](Squat_Power_Results.csv)
+- [Link to R Script](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Squat_Power_R_Script.R)
+- [Link to Results](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Squat_Power_Results.csv)
     
 ### Force Plate Visualizations 🐰
 - **Objective:** visualize 2 different force plate metrics over time to give a quick snapshot of the team's performance throughout the year based on position group.
 - **Practical Applications:** help coaches retroactively evaluate high and low periods of training, reflect on unavoidable/confounding variables like in-season travel, etc. to proactively prepare for the highs and lows throughout future academic calendars.
-- [Link to R Script](Force_Plate_Viz_R_Script.R)
-- [Link to Results](Force_Plate_Results_Table.csv)
-- [Plot for Jump Height](Jump_Height_Plot.png)
-- [Plot for mRSI](mRSI_Plot.png)
+- [Link to R Script](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Force_Plate_Viz_R_Script.R)
+- [Link to Results](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Force_Plate_Results_Table.csv)
+- [Plot for Jump Height](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Jump_Height_Plot.png)
+- [Plot for mRSI](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/mRSI_Plot.png)
 
 ### Sport Science Project Write-Ups/Articles
 - **Objective:** give thorough details in a research article-type format following introduction, methods, data, results, and discussion to share findings and insights from real-world performance case studies
@@ -42,7 +42,7 @@ Balancing the extremes of publishing academic research with the hands-on world o
 ## Validation of Internal and External Load Metrics in NCAA D1 Women's Beach Volleyball
 - **Objective:** Be the first study in women's college beach volleyball, and first load monitoring validation study in all of beach volleyball, to validate sRPE Load and Distance Covered to Heart Rate Load (TRIMP)
 - **Implications:** Provide beach volleyball athletes with an affordable and scalable way to monitor load (sRPE Load) based on it's high correlations with both objective internal (TRIMP) and external (Distance Covered) loads.
-- [Master's Thesis Published in JSCR](Matt_Tometz_Thesis_JSCR.pdf)
+- [Master's Thesis Published in JSCR](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Matt_Tometz_Thesis_JSCR.pdf)
 
 ---
 
@@ -72,11 +72,11 @@ Balancing the extremes of publishing academic research with the hands-on world o
 - Foot evaluating and profiling under Dr. Bruce Williams
 
 ## Resume and Certifications
-- [Link to Resume](Matt_Tometz_Resume.pdf)
-- [Certified Performance and Sport Scientist (CPSS)](Matt_Tometz_NSCA_ID.pdf)
-- [Certified Strength and Conditioning Specialist (CSCS)](Matt_Tometz_NSCA_ID.pdf)
-- [Google Data Analytics Professional Certificate](Matt_Tometz_Google_Data_Analytics_Certificate.pdf)
-- [Google Crash Course on Python Certificate](Crash_Course_on_Python_Cert.pdf)
+- [Link to Resume](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Matt_Tometz_Resume.pdf)
+- [Certified Performance and Sport Scientist (CPSS)](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Matt_Tometz_NSCA_ID.pdf)
+- [Certified Strength and Conditioning Specialist (CSCS)](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Matt_Tometz_NSCA_ID.pdf)
+- [Google Data Analytics Professional Certificate](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Matt_Tometz_Google_Data_Analytics_Certificate.pdf)
+- [Google Crash Course on Python Certificate](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Crash_Course_on_Python_Cert.pdf)
 
 ## Personal Passion Projects
 - [YouTube Channel](https://www.youtube.com/matttometz)
