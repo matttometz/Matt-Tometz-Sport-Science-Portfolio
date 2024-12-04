@@ -1,0 +1,300 @@
+---
+title: "CMJ Visualization Markdown"
+output: html_document
+date: "2024-11-19"
+---
+## Familiarization and Cleaning
+1. Load appropriate packages and libraries
+```{Packages and Libraries, echo=FALSE}
+# Install packages
+install.packages("tidyverse")
+install.packages("corrplot")
+install.packages("fmsb")
+install.packages("gplots")
+install.packages("gridExtra")
+install.packages("grid")
+
+# Load packages
+library(dplyr)
+library(tidyr)
+library(readr)
+library(corrplot)
+library(lubridate)
+library(fmsb)
+library(gplots)
+library(gridExtra)
+library(grid)
+```
+
+2. Import CMJ data
+```{Import data, echo=FALSE}
+cmj_data <- read.csv("sample_forceplate_data.csv")
+original_count <- nrow(cmj_data)
+```
+
+3. Familiarize myself data structure, formatting, ranges, etc in Excel through exploratory sorting/filtering
+
+4. Remove outliers based on weight (-1), team (NA), and metrics of +/- 3 standard deviations
+```{Outlier Removal, echo=FALSE}
+# Clean data with invalid weights (-1) and invalid teams (NA)
+cmj_data_clean <- cmj_data %>%
+  filter(weight_kg != -1, !is.na(parent_team_name))
+
+# Print cleaning summary of how rows were removed
+cleaning_summary <- data.frame(
+  Metric = c("Original Count", "Cleaned Count", "Removed Records", "Invalid Weight", "Missing Team"),
+  Value = c(
+    original_count,
+    nrow(cmj_data_clean),
+    original_count - nrow(cmj_data_clean),
+    sum(cmj_data$weight_kg == -1),
+    sum(is.na(cmj_data$parent_team_name))
+  )
+)
+
+# Function to find outliers of +/- 3 standard deviations
+identify_outliers <- function(data) {
+  data %>%
+    group_by(metric) %>%
+    mutate(
+      mean_val = mean(value),
+      sd_val = sd(value),
+      is_outlier = value > (mean_val + 3*sd_val) | value < (mean_val - 3*sd_val)
+    ) %>%
+    ungroup()
+}
+
+# Data count before removing outliers
+pre_outlier_count <- nrow(cmj_data_clean)
+outlier_data <- identify_outliers(as.data.frame(cmj_data_clean))
+
+# Remove outliers
+cmj_data_filtered <- outlier_data %>%
+  filter(!is_outlier) %>%
+  select(-mean_val, -sd_val, -is_outlier)
+
+# Summary of outliers removed by metric
+outliers_by_metric <- outlier_data %>%
+  group_by(metric) %>%
+  summarize(
+    total_rows = n(),
+    outliers_removed = sum(is_outlier),
+    percent_removed = round(sum(is_outlier)/n() * 100, 2)
+  ) %>%
+  filter(outliers_removed > 0) %>%
+  arrange(desc(percent_removed))
+
+# Update main dataset
+cmj_data_clean <- cmj_data_filtered
+```
+
+## Data Analysis
+1. Correlation analysis to evaluate similarity when selecting CMJ metrics, trying to avoid redundancy
+```{Force Plate Correlations, eval=FALSE}
+# Reorganize data long to wide for correlation analysis
+cmj_wide <- cmj_data_clean %>%
+  group_by(player_id, test_date, metric) %>%
+  summarize(mean_value = mean(value), .groups = 'drop') %>%
+  pivot_wider(
+    id_cols = c(player_id, test_date),
+    names_from = metric,
+    values_from = mean_value
+  )
+
+# Calculate correlations for metrics
+cor_matrix <- round(cor(cmj_wide[,3:ncol(cmj_wide)], use = "complete.obs"), 2)
+```
+
+2. Define selected CMJ metrics to be used for analysis
+```{CMJ Metric Selection, eval=FALSE}
+# Define the selected metrics
+selected_metrics <- c("Concentric Mean Power / BM", "Eccentric Mean Power / BM", 
+                      "Force at Zero Velocity", "RSI-modified", "Vertical Velocity at Takeoff")
+```
+
+2. Calculate percentiles for Player 3185 vs Team and vs League Outfielders
+```{Percentile Calculation, eval=FALSE}
+# Calculate percentiles for Player 3185 vs Team
+Team_comparison <- cmj_data_clean %>%
+  filter(parent_team_name == "Team" | player_id == "3185") %>%
+  group_by(metric) %>%
+  filter(metric %in% selected_metrics) %>%
+  summarize(
+    player_value = mean(value[player_id == "3185"]),
+    team_percentile = ecdf(value[parent_team_name == "Team"])(mean(value[player_id == "3185"])) * 100
+  ) %>%
+  ungroup()
+
+# Calculate percentiles for Player 3185 vs Position 3 (excluding Team)
+position_comparison <- cmj_data_clean %>%
+  filter((primary_position == "3" & parent_team_name != "Team") | player_id == "3185") %>%
+  group_by(metric) %>%
+  filter(metric %in% selected_metrics) %>%
+  summarize(
+    player_value = mean(value[player_id == "3185"]),
+    position_percentile = ecdf(value[primary_position == "3" & parent_team_name != "Team"])(mean(value[player_id == "3185"])) * 100
+  ) %>%
+  ungroup()}
+```
+
+## Plot Creation
+
+1. Correlation plot creation
+```{Correlation Plot Creation, eval=FALSE}
+# Create correlation plot
+png("correlation_plot.png", width = 1500, height = 1300, res = 150)
+
+# Reformat plot for easier readability
+corrplot(cor_matrix, method = "color", type = "upper", order = "alphabet", tl.col = "black", 
+         tl.srt = 45, addCoef.col = "black", number.cex = 0.9, tl.cex = 0.9, mar = c(0,0,2,0))
+dev.off()
+```
+
+2. Formatting data for each plot creation
+```{Data formatting, eval=FALSE}
+# For Team comparison
+team_spider_data <- data.frame(
+  matrix(c(100, 100, 100, 100, 100,
+           0, 0, 0, 0, 0,
+           50, 50, 50, 50, 50,
+           team_comparison$team_percentile),
+         nrow = 4, byrow = TRUE)
+)
+colnames(team_spider_data) <- selected_metrics
+rownames(team_spider_data) <- c("max", "min", "team_avg", "player")
+
+# For Position 3 comparison
+position_spider_data <- data.frame(
+  matrix(c(100, 100, 100, 100, 100,
+           0, 0, 0, 0, 0,
+           50, 50, 50, 50, 50,
+           position_comparison$position_percentile),
+         nrow = 4, byrow = TRUE)
+)
+colnames(position_spider_data) <- selected_metrics
+rownames(position_spider_data) <- c("max", "min", "position_avg", "player")
+```
+
+3. Creating each plot
+```{Plot creation, eval=FALSE}
+# vs Team
+png("player_vs_team_spider.png", width = 1000, height = 900, res = 100)
+layout(matrix(c(1,2), nrow=2, ncol=1), heights=c(4,1))
+
+# Spider plot
+par(mar=c(3, 4, 2, 4))
+radarchart(team_spider_data,
+           pcol = c("blue", "red"),        
+           pfcol = c(rgb(0, 0, 1, 0.2),   
+                     rgb(1, 0, 0, 0.2)),   
+           plwd = 2,
+           cglcol = "grey",
+           cglty = 1,
+           axislabcol = "grey",
+           caxislabels = seq(0, 100, 25),
+           title = "Player 3185 vs Team (Percentiles)")
+legend("topright", 
+       legend = c("Team Average", "Player 3185"), 
+       col = c("blue", "red"), 
+       lwd = 2,
+       pch = 20,
+       pt.cex = 2,
+       bty = "n")
+
+# Percentiles text
+par(mar=c(0,0,0,0))
+plot.new()
+text(0.5, 0.9, "Player 3185 Percentiles:", font=2)
+for(i in 1:length(selected_metrics)) {
+  text(0.5, 0.8-i*0.15,
+       paste(selected_metrics[i], ": ", 
+             round(team_comparison$team_percentile[i], 1), "%"))
+}
+dev.off()
+
+# vs Position 3
+png("player_vs_position3_spider.png", width = 1000, height = 900, res = 100)
+layout(matrix(c(1,2), nrow=2, ncol=1), heights=c(4,1))
+
+# Spider plot
+par(mar=c(3, 4, 2, 4))
+radarchart(position_spider_data,
+           pcol = c("green", "red"),       
+           pfcol = c(rgb(0, 1, 0, 0.2),   
+                     rgb(1, 0, 0, 0.2)),   
+           plwd = 2,
+           cglcol = "grey",
+           cglty = 1,
+           axislabcol = "grey",
+           caxislabels = seq(0, 100, 25),
+           title = "Player 3185 vs Position 3 Players (Percentiles)")
+legend("topright", 
+       legend = c("Position 3 Average", "Player 3185"), 
+       col = c("green", "red"), 
+       lwd = 2,
+       pch = 20,
+       pt.cex = 2,
+       bty = "n")
+
+# Percentiles text
+par(mar=c(0,0,0,0))
+plot.new()
+text(0.5, 0.9, "Player 3185 Percentiles:", font=2)
+for(i in 1:length(selected_metrics)) {
+  text(0.5, 0.8-i*0.15,
+       paste(selected_metrics[i], ": ", 
+             round(position_comparison$position_percentile[i], 1), "%"))
+}
+dev.off()
+```
+
+## Visualizations
+1. Correlation Matrix of CMJ Metrics
+```{r correlation-plot, fig.cap="Correlation Matrix of CMJ Metrics", fig.align='center', out.width='65%', echo=FALSE}
+knitr::include_graphics("Anon_correlation_plot.png")
+```
+
+2. Player 3185 Percentiles vs Team
+```{r team-comparison, fig.cap="Player 3185 Percentiles vs Team", fig.align='center', out.width='65%', echo=FALSE}
+knitr::include_graphics("Anon_spider_1.png")
+```
+
+3. Player 3185 Percentiles vs League Outfield Average
+```{r league-comparison, fig.cap="Player 3185 Percentiles vs League Outfield Average", fig.align='center', out.width='65%', echo=FALSE}
+knitr::include_graphics("Anon_spider_2.png")
+```
+
+## Key Considerations
+
+-- **Selected force plate metrics:**
+
+- *Vertical Velocity at Takeoff*: proxy for jump height, simple performance metric
+
+- *RSI-modified*: ratio of jump effectiveness, output vs input (Time to Takeoff)
+
+- *Force at Zero Velocity*: strength number, highest force created during jump
+
+- *Concentric Mean Power / BM*: relative to BM for inter-athlete comparison, concentric number to compare to eccentric
+
+- *Eccentric Mean Power / BM*: relative to BM for inter-athlete comparison, eccentric number to compare to concentric
+
+-- **Logic and Thought Process**
+
+- With Excel's ease of use for data viewing and sorting, I looked at the minimums and maximums of each column, finding -1 for some Weight entries and NA for Team entries
+- As all CMJ metrics are "bounded" with relative physiological minimum and maximum thresholds, but with plenty of inter-athletes variation, I chose 3 standard deviations for outlier detection and removal as opposed to a slightly more stringent method like IQR
+- A percentile would be an easier ranking number (as opposed to a Z-score, for example) for an athlete to understand
+
+-- **Findings and Practical Applications**
+
+- My synopsis:
+  - Player 3185 (randomly selected) is very strong in the +96th percentile for *Force at Zero Velocity*
+    - I'm assuming Player 3185 is bouncy and forceful in shallow joints angles. A below average *Vertical Velocity at Takeoff* plus an above average *RSI-modified* means <u>Time to Takeoff</u> must be very quick
+      - This is supported with above average *Concentric Mean Power / BM* and below average *Eccentric Mean Power / BM*
+  - Player 3185 could benefit from some complementary full-range of motion strength training and deeper joint angle plyometrics
+
+-- **Limitations and Future Considerations**
+
+- Force at Zero Velocity had the most outliers removed, I would look more into that metric's reliability and see if there's potentially a more consistent metric for strength
+- Dive into intra- and inter-athlete reliability per metric
+- Evaluate athlete's spider graph in the first vs last month of training, see if any significant improvements have been made
+- Find correlations of Team to League Average to potentially avoid redundancy. However, since the Team is obviously the best in the league at drafting and developing, I attempted to give the athlete some reassurance by also including league averages

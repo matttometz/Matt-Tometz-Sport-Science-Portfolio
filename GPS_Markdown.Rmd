@@ -1,0 +1,266 @@
+---
+title: "GPS Visualization Markdown"
+output: html_document
+date: "2024-11-19"
+---
+## Familiarization and Cleaning
+1. Load appropriate packages and libraries
+```{Packages and Libraries, echo=FALSE}
+# Install packages
+install.packages("tidyverse")
+install.packages("feather")
+install.packages("zoo")
+install.packages("gridExtra")
+
+# Load packages
+library(feather)
+library(dplyr)
+library(tidyr)
+library(lubridate)
+library(ggplot2)
+library(zoo)
+library(gridExtra)
+library(grid)
+```
+
+2. Import CMJ data
+```{Import data, echo=FALSE}
+# Read the file
+gps_data <- read_feather("sample_gps_data.feather")
+```
+
+3. Write data into an Excel file for export
+```{Write Excel, echo=FALSE}
+# Export to an Excel file for viewing/manipulation
+install.packages("writexl")
+library(writexl)
+write_xlsx(gps_data, "gps_data.xlsx")
+```
+
+4. Familiarize myself data structure, formatting, ranges, etc in Excel through exploratory sorting/filtering
+
+5. Sort by date as output will be chronological
+```{Date Sort, echo=FALSE}
+# Sort by date
+gps_data <- gps_data %>%
+  arrange(Date)
+```
+
+5. Remove outliers based on first and last dates of training and extreme total distance values
+```{Outlier Removal, echo=FALSE}
+# Filter data to data range of first and last data points and filter xtreme total distance
+gps_data_clean <- gps_data %>%
+  filter(Date > as.Date("2021-02-19") & Date < as.Date("2021-09-17")) %>%
+  filter(`Total Distance` == 0 | 
+           (between(`Total Distance`, 85, 12000)))
+```
+
+## Data Analysis
+1. Correlation of Total Distance and High Speed Distance for whole data set, as well as average weekly correlation per player
+```{Distance Metrics Correlation, eval=FALSE}
+# Overall correlation
+overall_cor <- gps_data_clean %>%
+  filter(`Total Distance` > 0) %>%
+  summarise(
+    correlation = cor(`Total Distance`, `Distance > 85%`, 
+                      method = "pearson", use = "complete.obs"),
+    n_observations = n()
+  ) %>%
+  mutate(type = "Overall Dataset")
+
+# Average weekly correlation per athlete
+player_avg_cors <- gps_data_clean %>%
+  mutate(Week = floor_date(Date, "week")) %>%
+  group_by(player_id, Week) %>%
+  filter(n() >= 3) %>%
+  summarise(
+    sd_total = sd(`Total Distance`, na.rm = TRUE),
+    sd_hsd = sd(`Distance > 85%`, na.rm = TRUE),
+    correlation = if(sd_total > 0 && sd_hsd > 0) {
+      cor(`Total Distance`, `Distance > 85%`, 
+          method = "pearson", use = "complete.obs")
+    } else {
+      NA_real_
+    },
+    n_observations = n(),
+    .groups = "drop"
+  ) %>%
+  filter(!is.na(correlation)) %>%
+  group_by(player_id) %>%
+  summarise(
+    avg_correlation = mean(correlation, na.rm = TRUE),
+    total_weeks = n(),
+    total_observations = sum(n_observations)
+  ) %>%
+  arrange(player_id)
+```
+
+2. Calculate Acute Load, Chronic Load, and ACWR for both High Speed Distance and Total Distance
+```{ACWR Calculations, eval=FALSE}
+# Begin ACWR
+gps_data_clean <- gps_data_clean %>%
+  # Group by player so calculations are player-specific
+  group_by(player_id) %>%
+  arrange(Date) %>%
+  mutate(
+    # High Speed Distance calculations
+    Ac_HSD = round(rollmean(`Distance > 85%`, k = 7, fill = NA, align = "right"), 1),
+    Ch_HSD = round(rollmean(`Distance > 85%`, k = 28, fill = NA, align = "right"), 1),
+    ACWR_HSD = round(Ac_HSD / Ch_HSD, 2),
+    
+    # Total Distance calculations
+    Ac_tdist = round(rollmean(`Total Distance`, k = 7, fill = NA, align = "right"), 1),
+    Ch_tdist = round(rollmean(`Total Distance`, k = 28, fill = NA, align = "right"), 1),
+    ACWR_tdist = round(Ac_tdist / Ch_tdist, 2)
+  ) %>%
+  ungroup()
+```
+
+3. Visually double-check ACWR calculations for execution and accuracy
+```{ACWR Double Check, eval=FALSE}
+# Double check the results for one random player
+example_player <- gps_data_clean %>%
+  filter(player_id == 69756) %>%
+  select(Date, `Distance > 85%`, Ac_HSD, Ch_HSD, ACWR_HSD, 
+         `Total Distance`, Ac_tdist, Ch_tdist, ACWR_tdist)
+```
+
+4. Find date range of Player 69756's data and filter out all dates before and after (for conciseness of plot)
+```{Selected Athlete Date Range, eval=FALSE}
+# Get the exact first and last dates with Total Distance data for Player 69756
+player_dates <- gps_data_clean %>%
+  filter(player_id == 69756) %>%
+  filter(!is.na(`Total Distance`)) %>%
+  summarise(
+    start_date = min(Date[`Total Distance` > 0]),
+    end_date = max(Date[`Total Distance` > 0])
+  )
+
+# Get data within Player 69756's date range
+player_data <- gps_data_clean %>%
+  filter(player_id == 69756) %>%
+  filter(Date >= player_dates$start_date & Date <= player_dates$end_date)
+```
+
+5. Calculate weekly averages and sums of distance metrics to be used in plot
+```{Weekly Sum and Average, eval=FALSE}
+# Calculate weekly averages and exposures for Player 69756
+weekly_distances <- player_data %>%
+  mutate(Week = floor_date(Date, "week")) %>%
+  group_by(Week) %>%
+  summarise(
+    `Total Distance` = mean(`Total Distance`, na.rm = TRUE),
+    `High Speed Distance` = sum(`Distance > 85%`, na.rm = TRUE),
+    `High Speed Exposures` = sum(`Distance > 85%` > 50, na.rm = TRUE)
+  )
+```
+
+## Plot Creation
+1. Plot creation for distance metrics correlation
+```{Plot Distance Correlation, eval=FALSE}
+# Create correlation plot with r value from overall_cor
+correlation_plot <- ggplot(gps_data_clean %>% filter(`Total Distance` > 0), 
+                           aes(x = `Total Distance`, y = `Distance > 85%`)) +
+  geom_point(alpha = 0.3, color = "blue") +
+  geom_smooth(method = "lm", color = "red", se = FALSE) +
+  labs(
+    title = "Total Distance vs High Speed Distance",
+    x = "Total Distance (m)",
+    y = "High Speed Distance (m)"
+  ) +
+  annotate(
+    "text",
+    x = max(gps_data_clean$`Total Distance`, na.rm = TRUE) * 0.8,
+    y = max(gps_data_clean$`Distance > 85%`, na.rm = TRUE) * 0.9,
+    label = paste("r =", round(overall_cor$correlation, 2)),
+    size = 5,
+    fontface = "bold"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 12, face = "bold"),
+    axis.text = element_text(size = 10),
+    plot.background = element_rect(fill = "white", color = NA),
+    panel.background = element_rect(fill = "white", color = NA)
+  )
+
+# Save plot
+ggsave("distance_correlation.png", correlation_plot, width = 10, height = 8, units = "in", dpi = 300, bg = "white")
+```
+
+2. Plot creation for distance metrics trends
+```{Plot Distance Trends, eval=FALSE}
+# Create the plot with dual y-axes with formatting
+player_plot <- ggplot() +
+  geom_bar(data = weekly_distances, aes(x = Week, y = `Total Distance`, fill = "Weekly Avg Total Dist"), 
+           stat = "identity", alpha = 0.5, width = 6) +
+  geom_bar(data = weekly_distances, aes(x = Week, y = `High Speed Distance`, fill = "Weekly Total HSD"), 
+           stat = "identity", alpha = 0.7, width = 6) +
+  geom_smooth(data = player_data, 
+              aes(x = Date, y = ACWR_HSD * max(weekly_distances$`Total Distance`, na.rm = TRUE) / max(player_data$ACWR_HSD, na.rm = TRUE),
+                  color = "ACWR HSD"), linewidth = 1, se = FALSE, span = 0.2) +
+  geom_smooth(data = player_data,
+              aes(x = Date, y = ACWR_tdist * max(weekly_distances$`Total Distance`, na.rm = TRUE) / max(player_data$ACWR_tdist, na.rm = TRUE),
+                  color = "ACWR Total Dist"), linewidth = 1, se = FALSE, span = 0.2) +
+  geom_hline(yintercept = c(0.8, 1.3) * max(weekly_distances$`Total Distance`, na.rm = TRUE) / max(player_data$ACWR_HSD, na.rm = TRUE),
+             linetype = "dashed", color = "purple", linewidth = 0.8) +
+  scale_y_continuous(name = "Total Distance",
+                     sec.axis = sec_axis(~. * max(player_data$ACWR_HSD, na.rm = TRUE) / max(weekly_distances$`Total Distance`, na.rm = TRUE), 
+                                         name = "ACWR Ratio", breaks = seq(0, 2, by = 0.2))) +
+  scale_x_date(limits = c(player_dates$start_date, player_dates$end_date), expand = c(0, 0),
+               breaks = seq(from = player_dates$start_date, to = player_dates$end_date, by = "1 month"),
+               labels = scales::date_format("%b %Y")) +
+  scale_fill_manual(values = c("Weekly Avg Total Dist" = "blue", "Weekly Total HSD" = "red")) +
+  scale_color_manual(values = c("ACWR HSD" = "orange", "ACWR Total Dist" = "black")) +
+  theme_minimal() +
+  labs(title = "Player 69756 Total Distance and HSD Metrics", x = "Date", fill = "Bars", color = "Lines") +
+  theme(
+    plot.title = element_text(size = 24, face = "bold", hjust = 0.5, margin = margin(b = 20)),
+    axis.title = element_text(size = 16, face = "bold"),
+    axis.text = element_text(size = 12, face = "bold", color = "black"),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.title = element_text(size = 14, face = "bold"),
+    legend.text = element_text(size = 12, face = "bold"),
+    legend.position = "bottom",
+    legend.box = "horizontal",
+    legend.margin = margin(t = 10)
+  )
+```
+
+## Visualizations
+1. Correlation of Total Distance vs High Speed Distance
+```{r Dist-Corrl-plot, fig.cap="Correlation of Total Distance vs High Speed Distance", fig.align='center', out.width='65%', echo=FALSE}
+knitr::include_graphics("Anon_distance_correlation.png")
+```
+
+
+2. Player 69756 HSD Trends: HSD and Total Distance Averages, Totals, and ACWRs
+```{r HSD-plot, fig.cap="Player 69756 HSD Trends", fig.align='center', out.width='65%', echo=FALSE}
+knitr::include_graphics("Anon_player_69756_metrics.png")
+```
+
+## Key Considerations
+
+-- **Logic and Thought Process**
+
+- For potential outliers, Total Distance was selected as that value will be > 0 on any training day, as opposed to High Speed Distance
+- With Excel's ease of use for data viewing and sorting, I noticed the upper end of Total Distance was around 11000 with multiple entries at +5 million. For the lower end, the lowest Total Distance value that also had any High Speed Distance was ~87
+  - Outlier threshold (>12000 and <85) was selected by visual inspection because of the "unbounded" nature of the measurement and the significance of 0 values, instead of using a method like standard deviation
+- Although I removed Total Distance 0 values before and after the first and last dates with data, I left 0 values as off-days for the ACWR
+- Visual guidelines of ACWR at 1.3 and 0.8 (the "sweet spot") for easier interpretation of risk for under- or over-training. Although the narrative about ACWR has changed over the years, I still believe in the premise
+- High Speed Distance needs some context so that's why Total Distance weekly and ACWR numbers were included for comparison
+
+-- **Findings and Practical Applications**
+
+- It's not fair to assume High Speed Distance goes up when Total Distance goes up. With a correlation of 0.28 for the whole data set, and average individual player weekly correlations with at least 10 weeks of data ranges from 0.33 to 0.75, this is a poor relationship
+- The Total Distance ACWR remained pretty stable throughout the season, besides the few weeks following what I'm assuming might be an All-Star Break
+- The High Speed Distance ACWR had significantly more weekly fluctuations, bouncing back and forth between under- and over-training every ~3 weeks
+- I would recommend developing a weekly minimum threshold of High Speed Distance to qualify as sufficient (speed training residual is 5 +/- 3 days) to keep ACWR above 0.8
+
+-- **Limitations and Future Considerations**
+
+- Evaluating entire data set together, no consideration of position nor session type
+    - Dive in distance standards/norms per position group per session type
+- Evaluate if +85% if achieved during running out a single or double (position players) or what distance of sprint is needed (pitchers) for more practical programming
+- Develop an optimal "weekly HSD exposures" (ie days > 50), assuming it'll be ~1-3 days to try to maintain a high-low High Speed Distance training schedule, if possible
