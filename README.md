@@ -12,7 +12,7 @@ Balancing the extremes of publishing academic research with the hands-on world o
 ### Force Plate CMJ Visualization
 - **Objective:** create a visualization to communicate CMJ data to an athlete
 - Attached R Markdown document for full code, visuals, breakdown of process, and breakdown of interpretation/practical applications
-- [Link to CMJ Markdown](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/CMJ_Markdown.Rmd)
+- [Link to CMJ Markdown](CMJ_Markdown.html)
 
 ### GPS Distance Trends Visualization
 - **Objective:** create a visualization to communicate GPS/high speed distance trends with sports performacne professional to guide decision-making in future
