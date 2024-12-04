@@ -17,14 +17,14 @@ Balancing the extremes of publishing academic research with the hands-on world o
 ### GPS Distance Trends Visualization
 - **Objective:** create a visualization to communicate GPS/high speed distance trends with sports performacne professional to guide decision-making in future
 - Attached R Markdown document for full code, visuals, breakdown of process, and breakdown of interpretation/practical applications
-- [Link to GPS Markdown](https://github.com/matttometz/Matt-Tometz-Sport-Sciencce-Portfolio/blob/main/GPS_Markdown.Rmd)
+- [Link to GPS Markdown](GPS_Markdown.Rmd)
 
 ### 1080 Sprint Load-Velocity Profiling 👟
 - **Objective:** take load-velocity profiling data from the 1080 Sprint to individual profiles and generate group averages to influence loading prescriptions for resisted sprints.
 - **Practical Applications:** help coaches more quickly and effective select loads for resisted sprint training for both individual athletes to better tailor their loading prescriptions, as well as for large groups when the time to profile each athlete might not be available.
-- [Link to R Script](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/LVP_1080_r_script.R)
-- [Link to Group Averages](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/LVP_group_averages.csv)
-- [Link to Individual Profiles](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/LVP_condensed_profiles.csv)
+- [Link to R Script](LVP_1080_r_script.R)
+- [Link to Group Averages](LVP_group_averages.csv)
+- [Link to Individual Profiles](LVP_condensed_profiles.csv)
 
 ### Velocity-Based Training Squat Load-Power Profiling 💪
 - **Objective:** take squat data from training from a variety of squats including the variables of load, velocity, and power to calculate both the percent of estiamted 1-rep max and velocity for max power.
