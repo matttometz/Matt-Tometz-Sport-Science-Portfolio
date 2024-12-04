@@ -12,12 +12,12 @@ Balancing the extremes of publishing academic research with the hands-on world o
 ### Force Plate CMJ Visualization
 - **Objective:** create a visualization to communicate CMJ data to an athlete
 - Attached R Markdown document for full code, visuals, breakdown of process, and breakdown of interpretation/practical applications
-- [Link to CMJ Markdown](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/CMJ_Markdown.html)
+- [Link to CMJ Markdown](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/CMJ_Markdown.Rmd)
 
 ### GPS Distance Trends Visualization
 - **Objective:** create a visualization to communicate GPS/high speed distance trends with sports performacne professional to guide decision-making in future
 - Attached R Markdown document for full code, visuals, breakdown of process, and breakdown of interpretation/practical applications
-- [Link to GPS Markdown](https://github.com/matttometz/Matt-Tometz-Sport-Sciencce-Portfolio/blob/main/GPS_Markdown.hmtl)
+- [Link to GPS Markdown](https://github.com/matttometz/Matt-Tometz-Sport-Sciencce-Portfolio/blob/main/GPS_Markdown.Rmd)
 
 ### 1080 Sprint Load-Velocity Profiling 👟
 - **Objective:** take load-velocity profiling data from the 1080 Sprint to individual profiles and generate group averages to influence loading prescriptions for resisted sprints.
