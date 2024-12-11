@@ -19,6 +19,11 @@ Balancing the extremes of publishing academic research with the hands-on world o
 - Attached R Markdown document for full code, visuals, breakdown of process, and breakdown of interpretation/practical applications
 - [Link to GPS Markdown](GPS_Markdown.html)
 
+### Load Monitoring Web-Based Dashboard
+- **Objective:** create a web-based (password protected) dashboard accessible to coaching staff for quick access to training recommendations based on heart rate data
+- Deployed through Github with Python code, hosted on Streamlit
+- [Screenshot of Dashboard](Load_Monitoring_Dashboard.png)
+
 ### 1080 Sprint Load-Velocity Profiling 👟
 - **Objective:** take load-velocity profiling data from the 1080 Sprint to individual profiles and generate group averages to influence loading prescriptions for resisted sprints.
 - **Practical Applications:** help coaches more quickly and effective select loads for resisted sprint training for both individual athletes to better tailor their loading prescriptions, as well as for large groups when the time to profile each athlete might not be available.
