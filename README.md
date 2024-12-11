@@ -79,7 +79,7 @@ Balancing the extremes of publishing academic research with the hands-on world o
 
 ### Skills
 - Sprint video analysis
-- Intermediate Spanish communication
+- Professional working proficiency Spanish communication
 - Foot evaluating and profiling under Dr. Bruce Williams
 
 ## Resume and Certifications
