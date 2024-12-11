@@ -24,20 +24,20 @@ Balancing the extremes of publishing academic research with the hands-on world o
 - Deployed through Github with Python code, hosted on Streamlit
 - [Screenshot of Dashboard](Load_Monitoring_Dashboard.png)
 
-### 1080 Sprint Load-Velocity Profiling 👟
+### 1080 Sprint Load-Velocity Profiling
 - **Objective:** take load-velocity profiling data from the 1080 Sprint to individual profiles and generate group averages to influence loading prescriptions for resisted sprints.
 - **Practical Applications:** help coaches more quickly and effective select loads for resisted sprint training for both individual athletes to better tailor their loading prescriptions, as well as for large groups when the time to profile each athlete might not be available.
 - [Link to R Script](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/LVP_1080_r_script.R)
 - [Link to Group Averages](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/LVP_group_averages.csv)
 - [Link to Individual Profiles](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/LVP_condensed_profiles.csv)
 
-### Velocity-Based Training Squat Load-Power Profiling 💪
+### Velocity-Based Training Squat Load-Power Profiling
 - **Objective:** take squat data from training from a variety of squats including the variables of load, velocity, and power to calculate both the percent of estiamted 1-rep max and velocity for max power.
 - **Practical Applications:** help coaches prescribe training guidelines for Power Development blocks, regardless of if velocity-based training technology is (max power velocity) or is not (max power percent of estimated 1-rep max) available.
 - [Link to R Script](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Squat_Power_R_Script.R)
 - [Link to Results](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Squat_Power_Results.csv)
     
-### Force Plate Visualizations 🐰
+### Force Plate Visualizations
 - **Objective:** visualize 2 different force plate metrics over time to give a quick snapshot of the team's performance throughout the year based on position group.
 - **Practical Applications:** help coaches retroactively evaluate high and low periods of training, reflect on unavoidable/confounding variables like in-season travel, etc. to proactively prepare for the highs and lows throughout future academic calendars.
 - [Link to R Script](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Force_Plate_Viz_R_Script.R)
@@ -88,7 +88,7 @@ Balancing the extremes of publishing academic research with the hands-on world o
 - Foot evaluating and profiling under Dr. Bruce Williams
 
 ## Resume and Certifications
-- [Link to Resume](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/MattTometzResume.pdf)
+- [Link to Resume](MattTometzResume.pdf)
 - [Certified Performance and Sport Scientist (CPSS)](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Matt_Tometz_NSCA_ID.pdf)
 - [Certified Strength and Conditioning Specialist (CSCS)](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Matt_Tometz_NSCA_ID.pdf)
 - [Google Data Analytics Professional Certificate](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Matt_Tometz_Google_Data_Analytics_Certificate.pdf)
