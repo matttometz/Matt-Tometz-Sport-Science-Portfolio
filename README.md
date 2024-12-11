@@ -42,8 +42,8 @@ Balancing the extremes of publishing academic research with the hands-on world o
 - **Practical Applications:** help coaches retroactively evaluate high and low periods of training, reflect on unavoidable/confounding variables like in-season travel, etc. to proactively prepare for the highs and lows throughout future academic calendars.
 - [Link to R Script](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Force_Plate_Viz_R_Script.R)
 - [Link to Results](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Force_Plate_Results_Table.csv)
-- [Plot for Jump Height](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Jump_Height_Plot.png)
-- [Plot for mRSI](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/mRSI_Plot.png)
+- [Plot for Jump Height](Jump_Height_Plot.png)
+- [Plot for mRSI](mRSI_Plot.png)
 
 ### Sport Science Project Write-Ups/Articles
 - **Objective:** give thorough details in a research article-type format following introduction, methods, data, results, and discussion to share findings and insights from real-world performance case studies
