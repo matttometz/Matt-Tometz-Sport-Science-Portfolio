@@ -88,7 +88,7 @@ Balancing the extremes of publishing academic research with the hands-on world o
 - Foot evaluating and profiling under Dr. Bruce Williams
 
 ## Resume and Certifications
-- [Link to Resume](MattTometzResume.pdf)
+- [Link to Resume](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/MattTometzResume.pdf)
 - [Certified Performance and Sport Scientist (CPSS)](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Matt_Tometz_NSCA_ID.pdf)
 - [Certified Strength and Conditioning Specialist (CSCS)](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Matt_Tometz_NSCA_ID.pdf)
 - [Google Data Analytics Professional Certificate](https://github.com/matttometz/Matt-Tometz-Sport-Science-Portfolio/blob/main/Matt_Tometz_Google_Data_Analytics_Certificate.pdf)
