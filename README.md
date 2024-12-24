@@ -45,6 +45,10 @@ Balancing the extremes of publishing academic research with the hands-on world o
 - [Plot for Jump Height](Jump_Height_Plot.png)
 - [Plot for mRSI](mRSI_Plot.png)
 
+### Sprint Force-Velocity Profiling Decision-Tree
+- **Objective:** quantitatively and visually map out thresholds and consequent programming based on sprint force-velocity profiling results
+- [Sprint FVP Decision-Tree](sprint-decision-tree.png)
+
 ### Sport Science Project Write-Ups/Articles
 - **Objective:** give thorough details in a research article-type format following introduction, methods, data, results, and discussion to share findings and insights from real-world performance case studies
 - [Load-Velocity Profiling on the 1080 Sprint: Everything You Need to Know](https://simplifaster.com/articles/load-velocity-profiling-1800-sprint/)
