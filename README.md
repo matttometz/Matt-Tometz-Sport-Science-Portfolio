@@ -47,7 +47,7 @@ Balancing the extremes of publishing academic research with the hands-on world o
 
 ### Sprint Force-Velocity Profiling Decision-Tree
 - **Objective:** quantitatively and visually map out thresholds and consequent programming based on sprint force-velocity profiling results
-- [Sprint FVP Decision-Tree](sprint-decision-tree.png)
+- [Sprint FVP Decision-Tree](sprint_decision_tree.png)
 
 ### Sport Science Project Write-Ups/Articles
 - **Objective:** give thorough details in a research article-type format following introduction, methods, data, results, and discussion to share findings and insights from real-world performance case studies
