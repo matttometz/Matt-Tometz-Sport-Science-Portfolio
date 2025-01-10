@@ -1,7 +1,7 @@
 <h1 align="center">Matt Tometz, MS, CPSS, CSCS</h1>
 <h2 align="center">Sport Science Portfolio</h2>
 
-“Helping athletes and coaches take control of their sports story” – that’s why I'm here. As an ex-college baseball walk-on who ended up playing in the DII College World Series just 9 months later, I know how powerful a story can be. I may not remember all my stats, but the moments, the highs, and the lessons still evoke the same feelings when I tell the stories. Now, I’m driven to help others build their own unforgettable stories in high performance through coaching and sport science.
+“Helping athletes and coaches take control of their sports story” – that’s why I'm here. As an ex-college baseball walk-on who ended up playing in the DII College World Series just 9 months later, I know how powerful a story can be. I may not remember all my stats, but the moments, the highs, and the lessons still evoke the same feelings when I tell the stories now. Now, I’m driven to help others build their own unforgettable stories in high performance through coaching and sport science.
 
 Balancing the extremes of publishing academic research with the hands-on world of coaching, I’ve learned to blend both and find the truth in the middle. The objectivity of data and the subjectivity of collaboration make sport science an exciting challenge, and I’m passionate about applying these insights in real-world settings through coaching. My goal is to make sport science practical and my coaching more reliable so athletes and coaches can achieve the best possible outcomes.
 
